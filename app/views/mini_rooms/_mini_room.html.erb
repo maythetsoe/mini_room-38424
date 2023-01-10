@@ -1,0 +1,7 @@
+<div class="card">
+  <%= link_to image_tag(mini_room.image, class: :card__img ), mini_room_path(mini_room.id), method: :get %>
+  <div class="card__body">
+    <%= link_to mini_room.title, mini_room_path(mini_room.id), class: :card__title%>
+ <%# <%= link_to "by #{mini_room.user_id.nickname}", "/users/#{mini_room.user.id}" , class: :card__user %>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<main class="main">
+  <div class="inner">
+    <div class="prototype__wrapper">
+      <p class="prototype__hedding">
+        <%= @donation.name %>
+      </p>
+       <div class="prototype__image">
+        <%= image_tag @pdonation.image %>
+      </div>
+      <%= form_with model: [@mini_room, @donation],local: true do |f|%>
+  </div>
+  </div>
+</main>

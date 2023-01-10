@@ -1,0 +1,29 @@
+<main class="main">
+  <div class="inner">
+    <div class="mini_room__wrapper">
+      <p class="mini_room__hedding">
+        <%= @mini_room.title %>
+      </p>
+      <%# <%= link_to "by #{@mini_room.user_id.nickname}", "/users/#{mini_room.user.id}", class: :mini_room__user %> 
+      <% if user_signed_in? && current_user.id == @mini_room.user_id %>
+      <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
+        <div class="mini_room__manage">
+          <%= link_to "編集する", edit_mini_room_path(@mini_room.id), method: :get, class: :mini_room__btn %>
+          <%= link_to "削除する", mini_room_path(@mini_room.id), method: :delete, class: :mini_room__btn %>
+        </div>
+      <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
+      <% end %>
+      <div class="mini_room__image">
+        <%= image_tag @mini_room.image %>
+      </div>
+      <div class="mini_room__body">
+        <div class="mini_room__detail">
+          <p class="detail__message">
+            <%= @mini_room.concept %>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
